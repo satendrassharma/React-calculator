@@ -1,0 +1,150 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body{
+  margin:0;
+  padding:0;
+}
+
+.header{
+  border-bottom:2px solid black;
+  box-shadow:1px 1px 2px black;
+  margin:0;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+
+
+.calculator{
+  background:lightgrey;
+  padding-bottom:15px;
+  
+}
+
+
+/* display */
+.display_wrapper{
+  height:120px;
+  background:white;
+  padding-right:5px;
+}
+
+.expression{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  font-size:1.6rem;
+  height:40%;
+}
+.result{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  font-size:2rem;
+  height:60%;
+}
+
+/* history */
+.history_toggle{
+  padding:.6rem 0;
+  font-size:1.4rem;
+  background:rgb(230, 230, 230);
+  margin-bottom:10px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.history_wrapper{
+  background:white;
+  
+  height:350px;
+  overflow:scroll;
+  
+}
+::-webkit-scrollbar{
+  width: 0px;  
+  background: transparent;  
+}
+
+
+.history_wrapper .delete_all{
+  text-align:left;
+  padding:.4rem .4rem;
+  cursor:pointer;
+
+}
+.history_wrapper .history_item{
+  /* border:1px solid red; */
+  padding:.4rem 1.2rem;
+  border-top:2px solid black;
+}
+.history_item:hover{
+  background:lightgreen;
+}
+
+
+.expression_wrapper{
+  display:flex;
+  justify-content: space-between;
+  padding:.4rem .3rem;
+  align-items:center;
+  font-size:1.2rem;
+}
+.expression_wrapper .delete{
+  cursor:pointer;
+  color:blue;
+}
+
+.expression_wrapper .expression{
+
+}
+
+.history_item .result{
+  font-size:1.6rem;
+}
+
+
+
+/* buttons */
+.buttons{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:5px;
+}
+
+.button{
+  padding:1rem 1.2rem;
+  background:rgb(243, 242, 242);
+  font-size:1.8rem;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.button.cont{
+  color:rgb(86, 147, 245);
+  background:rgb(230, 230, 230)
+}
+
+.button:active{
+  background:rgb(245, 51, 51);
+  box-shadow:1px 1px 3px rgb(245, 51, 51);
+}
+
+.button.equal{
+  color:green;
+}
+
+@media (min-width:768px){
+  
+  .calculator{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    border: 2pxl;
+    border: 2px solid rgb(204, 203, 203);
+    border-radius:5px;
+}
+  }
