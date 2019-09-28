@@ -95,9 +95,17 @@ function App() {
     sethistory([]);
   };
 
-  const deleteHistory=(id)=>{
+  const deleteHistory=(e,id)=>{
+    e.stopPropagation();
     const newhistory=history.filter(h=>h.id!==id);
     sethistory([...newhistory]);
+  }
+
+  const populateHistory=(id)=>{
+    let hitem=history.find(h=>h.id===id);
+    // console.log(hitem,id,history);
+    setcstate({...cstate,expression:'',result:hitem.expression});
+    setIshistory(false);
   }
   return (
     <div className="App">
@@ -112,7 +120,7 @@ function App() {
         <FaHistory size='1.6rem' color='grey' />
         </div>
         {ishistory ? (
-          <History history={history} clearHistory={clearHistory} deleteHistory={deleteHistory}/>
+          <History history={history} populateHistory={populateHistory} clearHistory={clearHistory} deleteHistory={deleteHistory}/>
         ) : (
           <Keypad
             handleClear={handleClear}
